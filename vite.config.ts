@@ -12,11 +12,11 @@ export default defineConfig(({ mode }) => {
       tailwindcss(),
       VitePWA({
         registerType: 'autoUpdate',
-        includeAssets: ['favicon.svg'], // Keep your existing icon
+        includeAssets: ['favicon.svg'],
         manifest: {
           name: 'Lucid',
           short_name: 'Lucid',
-          description: 'Your project description here',
+          description: 'Open source ecosystem that allows users to perform their peak at work and in their lifes while balancing performance and well-being',
           theme_color: '#000000',
           icons: [
             {
