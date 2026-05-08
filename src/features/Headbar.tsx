@@ -1,7 +1,7 @@
 function Headbar() {
     return (
-        <div className={`w-screen h-[8%] flex flex-row items-center justify-between p-3`}>
-            <div className={`font-nunito text-white text-2xl`}>
+        <div className={`w-screen h-[10%] flex flex-row items-center justify-between p-5`}>
+            <div className={`font-nunito text-white text-3xl font-bold`}>
                 Lucid
             </div>
         </div>

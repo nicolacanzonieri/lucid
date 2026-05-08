@@ -39,7 +39,7 @@ function App() {
         <Headbar />
         
         {/* MAIN VIEW */}
-        <div className={`w-screen h-[84%] flex flex-col items-center justify-center`}>
+        <div className={`w-screen h-[82%] flex flex-col items-center justify-center`}>
           <Home />
         </div>
 
