@@ -1,6 +1,6 @@
 function Home() {
     return (
-        <div className={`font-bumbbled text-white text-center text-7xl tracking-[1px]`}>
+        <div className={`font-bumbbled text-white text-center text-7xl tracking-[1px] select-none`}>
             welcome
         </div>
     );
