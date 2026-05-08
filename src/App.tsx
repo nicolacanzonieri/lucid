@@ -9,20 +9,19 @@ function App() {
   const settings = useLiveQuery(() => db.settings.get('main'));
 
   useEffect(() => {
-    if (settings === undefined) {
-      console.log("SETTINGS DATA UNDEFINED");
-      return;
-    }
-    
-    if (!settings) {
-      // Initialize default database values
-      db.settings.add({
-        id: 'main',
-        colors: ['#4f219a', '#1a1035', '#000000', '#5d1780']
-      });
-      console.log("INITIALIZED SETTINGS DATA");
-    }
-  }, [settings]);
+    const initDb = async () => {
+      const existing = await db.settings.get('main');
+      if (!existing) {
+        await db.settings.put({
+          id: 'main',
+          colors:['#4f219a', '#1a1035', '#000000', '#5d1780']
+        });
+        console.log("INITIALIZED SETTINGS DATA");
+      }
+    };
+
+    initDb();
+  },[]);
 
   const currentColors = settings?.colors ?? ['#333', '#000']; 
 
