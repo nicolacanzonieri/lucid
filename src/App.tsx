@@ -5,6 +5,7 @@ import { db } from './db';
 import DataManagement from './components/DataManagement';
 
 import DiagonalGradientBackground from './features/DiagonalGradientBackground';
+import Headbar from './features/Headbar';
 import Home from './features/Home';
 
 function App() {
@@ -35,18 +36,14 @@ function App() {
 
       {/* WINDOW STRUCTURE */}
       <div className={`w-screen h-screen flex flex-col`}>
-        <div className={`w-screen h-[8%] flex flex-col`}>
-          {/* HEADBAR */}
-        </div>
-
+        <Headbar />
+        
         {/* MAIN VIEW */}
         <div className={`w-screen h-[84%] flex flex-col items-center justify-center`}>
           <Home />
         </div>
 
-        <div className={`w-screen h-[8%] flex flex-col`}>
-          {/* BOTTOM BAR */}
-        </div>
+        {/* BOTTOM BAR */}
       </div>
       
 
