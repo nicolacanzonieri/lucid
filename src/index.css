@@ -1,5 +1,27 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: 'Bumbbled';
+    src: url('../public/fonts/Bumbbled.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('../public/fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+@theme {
+    --font-bumbbled: 'Bumbbled', sans-serif;
+}
+
 :root {
-  
+    padding: 0px;
+    margin: 0px;
 }
