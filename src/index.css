@@ -19,6 +19,7 @@
 
 @theme {
     --font-bumbbled: 'Bumbbled', sans-serif;
+    --font-nunito: 'Nunito', serif;
 }
 
 :root {
