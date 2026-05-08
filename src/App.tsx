@@ -1,7 +1,9 @@
 import { useLiveQuery } from 'dexie-react-hooks';
 import { useEffect } from 'react';
 import { db } from './db';
+
 import DataManagement from './components/DataManagement';
+
 import DiagonalGradientBackground from './features/DiagonalGradientBackground';
 
 function App() {
@@ -28,8 +30,25 @@ function App() {
 
   return (
     <>
-      <DiagonalGradientBackground colors={currentColors}>
-      </DiagonalGradientBackground>
+      <DiagonalGradientBackground colors={currentColors} />
+
+      {/* WINDOW STRUCTURE */}
+      <div className={`w-screen h-screen flex-col`}>
+        <div className={`w-screen h-[8%] flex-col`}>
+          {/* HEADBAR */}
+        </div>
+
+        <div className={`w-screen h-[84%] flex-col`}>
+          {/* MAIN VIEW */}
+        </div>
+
+        <div className={`w-screen h-[8%] flex-col`}>
+          {/* BOTTOM BAR */}
+        </div>
+      </div>
+      
+
+      {/* DEBUG ONLY */}
       <DataManagement />
     </>
   );
