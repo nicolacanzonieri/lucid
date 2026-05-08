@@ -9,6 +9,7 @@ function App() {
   const settings = useLiveQuery(() => db.settings.get('main'));
 
   useEffect(() => {
+    // Load/Initialize settings data
     const initDb = async () => {
       const existing = await db.settings.get('main');
       if (!existing) {
