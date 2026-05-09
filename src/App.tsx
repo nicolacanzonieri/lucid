@@ -36,7 +36,7 @@ function App() {
       <DiagonalGradientBackground colors={currentColors} />
 
       {/* WINDOW STRUCTURE */}
-      <div className={`w-dvw h-dvh flex flex-col overflow-hidden`}>
+      <div className={`w-dvw h-dvh flex flex-col overflow-hidden pb-[env(safe-area-inset-bottom)]`}>
         <div className='flex-none'>
           <Headbar />
         </div>
