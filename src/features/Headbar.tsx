@@ -4,7 +4,7 @@ function Headbar() {
     return (
         <div className={`w-full h-17 flex flex-row items-center justify-between p-3`}>
             {/* Title */}
-            <div className={`font-elms text-white text-3xl font-bold select-none`}>
+            <div className={`font-elms text-white text-3xl font-normal select-none`}>
                 Lucid
             </div>
 
