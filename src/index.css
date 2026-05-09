@@ -6,8 +6,8 @@
 }
 
 @font-face {
-    font-family: 'Nunito';
-    src: url('../public/fonts/Nunito-VariableFont_wght.ttf') format('truetype');
+    font-family: 'ElmsSans';
+    src: url('../public/fonts/ElmsSans/ElmsSans-VariableFont_wght.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -19,7 +19,7 @@
 
 @theme {
     --font-bumbbled: 'Bumbbled', sans-serif;
-    --font-nunito: 'Nunito', serif;
+    --font-elms: 'ElmsSans', serif;
 }
 
 :root {
