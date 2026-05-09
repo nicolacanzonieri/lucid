@@ -35,15 +35,19 @@ function App() {
       <DiagonalGradientBackground colors={currentColors} />
 
       {/* WINDOW STRUCTURE */}
-      <div className={`w-screen h-screen flex flex-col`}>
-        <Headbar />
+      <div className={`w-screen h-screen flex flex-col overflow-hidden`}>
+        <div className='flex-none'>
+          <Headbar />
+        </div>
         
         {/* MAIN VIEW */}
-        <div className={`w-screen h-[82%] flex flex-col items-center justify-center`}>
+        <div className={`flex-1 flex flex-col items-center justify-center`}>
           <Home />
         </div>
 
-        {/* BOTTOM BAR */}
+        <div className='flex-none'>
+          {/* BOTTOM BAR */}
+        </div>
       </div>
       
 
