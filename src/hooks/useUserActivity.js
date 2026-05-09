@@ -1,15 +1,21 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
-export const useUserActivity = (callback) => {
+export const useUserActivity = (callback, delay = 1000) => {
+    const lastCall = useRef(0);
+
     useEffect(() => {
         // Function that handles the event
         const handleActivity = (event) => {
-            callback(event);
+            const now = Date.now();
+            if (now - lastCall.current >= delay) {
+                lastCall.current = now;
+                callback(event);
+            }
         };
 
         // Events to monitor
         const events = ['keydown', 'mousemove', 'mousedown'];
-
+        
         // Add listeners to the window
         events.forEach((event) => window.addEventListener(event, handleActivity));
 
@@ -17,5 +23,5 @@ export const useUserActivity = (callback) => {
         return () => {
             events.forEach((event) => window.removeEventListener(event, handleActivity));
         };
-    }, [callback]);
+    }, [callback, delay]);
 };
