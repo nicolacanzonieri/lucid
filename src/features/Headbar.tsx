@@ -2,7 +2,7 @@ import IconButton from "../components/IconButton";
 
 function Headbar() {
     return (
-        <div className={`w-screen h-[10%] flex flex-row items-center justify-between p-3 bg-red-500`}>
+        <div className={`w-screen h-[10%] min-h-15 flex flex-row items-center justify-between p-3`}>
             {/* Title */}
             <div className={`font-elms text-white text-2xl font-bold select-none`}>
                 Lucid
