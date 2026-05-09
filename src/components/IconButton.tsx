@@ -7,7 +7,7 @@ interface IconButtonProps {
 
 function IconButton({ children, className="" }: IconButtonProps) {
     return (
-        <div className={`aspect-square h-full rounded-xl bg-white/35 flex flex-row items-center justify-center ${className}`}>
+        <div className={`aspect-square h-full bg-white/20 rounded-xl border border-white/20 flex flex-row items-center justify-center ${className}`}>
             {children}
         </div>
     );
