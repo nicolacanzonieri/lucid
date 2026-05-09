@@ -1,11 +1,35 @@
+import { useState, useEffect } from "react";
+
 import IconButton from "../components/IconButton";
 
 function Headbar() {
+    const [currentTime, setCurrentTime] = useState(new Date());
+
+    useEffect(() => {
+        // Update time every minute (60000ms)
+        const timer = setInterval(() => {
+            setCurrentTime(new Date());
+        }, 60000);
+
+        // Clear
+        return () => clearInterval(timer);
+    }, []);
+
+    const dayName = currentTime.toLocaleDateString("en-GB", { weekday: "short" }).toUpperCase();
+    const dayNumber = currentTime.getDate();
+    const monthName = currentTime.toLocaleDateString("en-GB", { month: "short" }).toUpperCase();
+    const time = currentTime.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false });
+
     return (
         <div className={`w-full h-17 flex flex-row items-center justify-between p-3`}>
             {/* Title */}
             <div className={`font-elms text-white text-3xl font-normal select-none`}>
                 Lucid
+            </div>
+
+            {/* TIME */}
+            <div className={`font-elms text-neutral-300 text-md font-normal select-none`}>
+                {`${dayName} ${dayNumber} ${monthName} - ${time}`}
             </div>
 
             {/* Settings */}
