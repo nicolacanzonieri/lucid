@@ -6,6 +6,7 @@ import DataManagement from './components/DataManagement';
 
 import DiagonalGradientBackground from './features/DiagonalGradientBackground';
 import Headbar from './features/Headbar';
+import BottomBar from './features/BottomBar';
 import Home from './features/Home';
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
 
         <div className='flex-none'>
           {/* BOTTOM BAR */}
+          <BottomBar />
         </div>
       </div>
       
