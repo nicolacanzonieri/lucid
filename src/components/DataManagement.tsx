@@ -40,14 +40,14 @@ export default function DataManagement() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-8 left-8 z-50 flex items-center gap-2 px-5 py-3 rounded-2xl bg-black/20 backdrop-blur-xl border border-white/15 shadow-[0_8px_30px_rgba(0,0,0,0.2)] hover:border-white/30 hover:bg-black/30 hover:scale-105 active:scale-95 transition-all duration-300 group"
+        className="fixed bottom-[calc(2rem+env(safe-area-inset-bottom))] left-[calc(2rem+env(safe-area-inset-left))] z-[50] flex items-center gap-2 px-5 py-3 rounded-2xl bg-black/20 backdrop-blur-xl border border-white/15 shadow-[0_8px_30px_rgba(0,0,0,0.2)] hover:border-white/30 hover:bg-black/30 hover:scale-105 active:scale-95 transition-all duration-300 group"
       >
         <div className="w-2 h-2 rounded-full bg-white/50 group-hover:bg-white transition-colors" />
         <span className="text-white/90 font-medium text-sm tracking-wide">Data</span>
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-100 flex items-center justify-center p-6 animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center pt-[calc(1.5rem+env(safe-area-inset-top))] pr-[calc(1.5rem+env(safe-area-inset-right))] pb-[calc(1.5rem+env(safe-area-inset-bottom))] pl-[calc(1.5rem+env(safe-area-inset-left))] animate-in fade-in duration-200">
           <div className="absolute inset-0 bg-black/40 backdrop-blur-md" onClick={() => setIsOpen(false)} />
           
           <div className="relative bg-neutral-900/90 border border-white/10 p-8 rounded-3xl w-full max-w-sm shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-2xl">
