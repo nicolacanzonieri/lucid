@@ -18,6 +18,7 @@
 }
 
 @theme {
+    /* FONTS */
     --font-bumbbled: 'Bumbbled', sans-serif;
     --font-elms: 'ElmsSans', serif;
 }
