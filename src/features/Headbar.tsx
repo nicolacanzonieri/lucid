@@ -6,10 +6,10 @@ function Headbar() {
     const [currentTime, setCurrentTime] = useState(new Date());
 
     useEffect(() => {
-        // Update time every minute (60000ms)
+        // Update time every second (1000ms)
         const timer = setInterval(() => {
             setCurrentTime(new Date());
-        }, 60000);
+        }, 1000);
 
         // Clear
         return () => clearInterval(timer);
