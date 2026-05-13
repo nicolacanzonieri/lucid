@@ -5,7 +5,7 @@ interface WidgetButtonPros {
 function WidgetButton({ isUserIdle=false }: WidgetButtonPros) {
     return (
         <div className={`w-50 h-full pt-3`}>
-            <div className={`w-full h-full flex flex-col items-center justify-center rounded-t-xl border-t ${isUserIdle ? `bg-transparent border-transparent text-transparent` : `bg-btn-bg-1 border-btn-border-1 text-btn-text-1`} transition-all ease-in-out duration-300 hover:bg-btn-hover-bg-1 hover:border-btn-hover-border-1 hover:text-btn-hover-text-1 active:bg-btn-active-bg-1 active:border-btn-active-border-1 active:text-btn-active-text-1`}>
+            <div className={`w-full h-full flex flex-col items-center justify-center rounded-t-xl border-t ${isUserIdle ? `bg-transparent border-transparent text-transparent` : `bg-btn-bg-1 border-btn-border-1 text-btn-text-1`} transition-all ease-in-out duration-150 hover:bg-btn-hover-bg-1 hover:border-btn-hover-border-1 hover:text-btn-hover-text-1 active:bg-btn-active-bg-1 active:border-btn-active-border-1 active:border-t-0 active:border-l-[0.5px] active:border-r-[0.5px] active:text-btn-active-text-1`}>
                 {/* <span className={`text-xs uppercase font-extralight select-none`}>
                     Widgets
                 </span> */}
