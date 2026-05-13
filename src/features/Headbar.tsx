@@ -38,11 +38,6 @@ function Headbar() {
 
     return (
         <div className={`w-full h-17 flex flex-row items-center justify-between p-3`}>
-            {/* Title */}
-            {/* <div className={`font-elms text-3xl font-normal select-none transition-all duration-500 ease-in-out ${isUserIdle ? "text-transparent" : "text-white"}`}>
-                Lucid
-            </div> */}
-
             {/* TIME */}
             <div className={`h-full flex flex-col items-start`}>
                 <span className={`font-elms text-neutral-300 text-md font-bold select-none`}>
