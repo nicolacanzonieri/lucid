@@ -1,8 +1,17 @@
-function WidgetButton() {
+interface WidgetButtonPros {
+    isUserIdle?: boolean
+}
+
+function WidgetButton({ isUserIdle=false }: WidgetButtonPros) {
     return (
         <div className={`w-50 h-full pt-3`}>
-            <div className={`w-full h-full rounded-t-lg bg-white/20`}>
-
+            <div className={`w-full h-full flex flex-col items-center justify-center rounded-t-xl border-t ${isUserIdle ? `bg-transparent border-transparent text-transparent` : `bg-btn-bg-1 border-btn-border-1 text-btn-text-1`} transition-all ease-in-out duration-300 hover:bg-btn-hover-bg-1 hover:border-btn-hover-border-1 hover:text-btn-hover-text-1 active:bg-btn-active-bg-1 active:border-btn-active-border-1 active:text-btn-active-text-1`}>
+                {/* <span className={`text-xs uppercase font-extralight select-none`}>
+                    Widgets
+                </span> */}
+                <span className="aspect-square h-full p-0 block">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+                </span>
             </div>
         </div>
     )

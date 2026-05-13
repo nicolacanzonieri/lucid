@@ -1,35 +1,22 @@
 import { useState, useEffect } from "react";
-import { useUserActivity } from "../hooks/useUserActivity";
 
 import IconButton from "../components/IconButton";
 
-function Headbar() {
-    const [idleCounter, setIdleCounter] = useState(0);
-    const [isUserIdle, setIsUserIdle] = useState(false);
-    const [currentTime, setCurrentTime] = useState(new Date());
+interface HeadbarProps {
+    isUserIdle?: boolean;
+}
 
-    // IDLE MONITOR
-    useUserActivity(() => {
-        setIdleCounter(0);
-        setIsUserIdle(false);
-    }, 1000);
+function Headbar({ isUserIdle=false }: HeadbarProps) {
+    const [currentTime, setCurrentTime] = useState(new Date());
 
     // TIMING
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentTime(new Date());
-            setIdleCounter((prev) => prev + 1);
         }, 1000);
 
         return () => clearInterval(timer);
     },[]);
-
-    // IDLE THRESHOLD CHECK
-    useEffect(() => {
-        if (idleCounter >= 5 && !isUserIdle) {
-            setIsUserIdle(true);
-        }
-    }, [idleCounter, isUserIdle]);
 
     const dayName = currentTime.toLocaleDateString("en-GB", { weekday: "short" }).toUpperCase();
     const dayNumber = currentTime.getDate();
