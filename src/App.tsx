@@ -63,18 +63,18 @@ function App() {
 
       {/* WINDOW STRUCTURE */}
       <div className={`w-screen h-screen flex flex-col overflow-hidden`}>
-        <div className='flex-none'>
+        {/* <div className='flex-none'>
           <Headbar isUserIdle={isUserIdle} />
-        </div>
+        </div> */}
 
         {/* MAIN VIEW */}
         <div className={`flex-1 flex flex-col items-center justify-center`}>
           <Home />
         </div>
 
-        <div className='flex-none'>
+        {/* <div className='flex-none'>
           <Bottombar isUserIdle={isUserIdle} />
-        </div>
+        </div> */}
       </div>
 
 
