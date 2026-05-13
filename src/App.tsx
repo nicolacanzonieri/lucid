@@ -6,8 +6,8 @@ import { useUserActivity } from "./hooks/useUserActivity";
 import DataManagement from './components/DataManagement';
 
 import DiagonalGradientBackground from './features/DiagonalGradientBackground';
-import Headbar from './features/Headbar';
-import Bottombar from "./features/Bottombar";
+import _Headbar from './features/Headbar';
+import _Bottombar from "./features/Bottombar";
 import Home from './features/Home';
 
 function App() {
