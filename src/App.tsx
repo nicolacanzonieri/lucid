@@ -6,8 +6,8 @@ import { useUserActivity } from "./hooks/useUserActivity";
 import DataManagement from './components/DataManagement';
 
 import DiagonalGradientBackground from './features/DiagonalGradientBackground';
-import _Headbar from './features/Headbar';
-import _Bottombar from "./features/Bottombar";
+import Headbar from './features/Headbar';
+import Bottombar from "./features/Bottombar";
 import Home from './features/Home';
 
 function App() {
@@ -63,18 +63,18 @@ function App() {
 
       {/* WINDOW STRUCTURE */}
       <div className={`w-screen h-screen flex flex-col overflow-hidden`}>
-        {/* <div className='flex-none'>
+        <div className='flex-none'>
           <Headbar isUserIdle={isUserIdle} />
-        </div> */}
+        </div>
 
         {/* MAIN VIEW */}
         <div className={`flex-1 flex flex-col items-center justify-center`}>
           <Home />
         </div>
 
-        {/* <div className='flex-none'>
+        <div className='flex-none'>
           <Bottombar isUserIdle={isUserIdle} />
-        </div> */}
+        </div>
       </div>
 
 
