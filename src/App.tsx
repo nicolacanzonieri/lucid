@@ -67,7 +67,7 @@ function App() {
       {/* WINDOW STRUCTURE */}
       <div className={`w-screen h-screen flex flex-col relative overflow-hidden`}>
         <div className='flex-none'>
-          <Headbar isUserIdle={isUserIdle} />
+          <Headbar isUserIdle={isUserIdle} onClickSettings={() => {setShowModal(true)}} />
         </div>
 
         {/* MAIN VIEW */}
@@ -80,7 +80,7 @@ function App() {
         </div>
       </div>
 
-      <div className={`w-screen h-screen absolute inset-0 flex flex-col items-center justify-center ${showModal ? 'backdrop-blur-md bg-black/25' : 'pointer-events-none'}`}>
+      <div onClick={() => {setShowModal(false)}} className={`w-screen h-screen absolute inset-0 flex flex-col items-center justify-center ${showModal ? 'backdrop-blur-md bg-black/25' : 'pointer-events-none'} transition-all ease-in-out duration-350`}>
         {showModal ? <Modal /> : null}
       </div>
 
