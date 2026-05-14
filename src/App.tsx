@@ -11,11 +11,12 @@ import Bottombar from "./features/Bottombar";
 import Home from './features/Home';
 
 function App() {
+  // USER IDLE PARAMETERS
   const [idleCounter, setIdleCounter] = useState(0);
   const [isUserIdle, setIsUserIdle] = useState(false);
 
   // Fetch data from database
-  const settings = useLiveQuery(() => db.settings.get('main'));
+  const settingsData = useLiveQuery(() => db.settings.get('main'));
 
   useEffect(() => {
     // Load/Initialize settings data
@@ -31,18 +32,7 @@ function App() {
     };
 
     initDb();
-  }, []);
 
-  const currentColors = settings?.colors ?? ['#333', '#000'];
-
-  // IDLE MONITOR
-  useUserActivity(() => {
-    setIdleCounter(0);
-    setIsUserIdle(false);
-  }, 1000);
-
-  // TIMING
-  useEffect(() => {
     const timer = setInterval(() => {
       setIdleCounter((prev) => prev + 1);
     }, 1000);
@@ -50,7 +40,14 @@ function App() {
     return () => clearInterval(timer);
   }, []);
 
-  // IDLE THRESHOLD CHECK
+  const currentColors = settingsData?.colors ?? ['#333', '#000'];
+
+  // IDLE MONITOR
+  useUserActivity(() => {
+    setIdleCounter(0);
+    setIsUserIdle(false);
+  }, 1000);
+
   useEffect(() => {
     if (idleCounter >= 5 && !isUserIdle) {
       setIsUserIdle(true);
