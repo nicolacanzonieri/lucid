@@ -3,19 +3,25 @@ import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db';
 import { useUserActivity } from "./hooks/useUserActivity";
 
+// COMPONENTS
 import DataManagement from './components/DataManagement';
+import Modal from "./components/Modal";
 
+// FEATURES
 import DiagonalGradientBackground from './features/DiagonalGradientBackground';
 import Headbar from './features/Headbar';
 import Bottombar from "./features/Bottombar";
 import Home from './features/Home';
 
 function App() {
+  // MODALS PARAMETERS
+  const [showModal, setShowModal] = useState(false);
+
   // USER IDLE PARAMETERS
   const [idleCounter, setIdleCounter] = useState(0);
   const [isUserIdle, setIsUserIdle] = useState(false);
 
-  // Fetch data from database
+  // DATA PARAMETERS
   const settingsData = useLiveQuery(() => db.settings.get('main'));
 
   useEffect(() => {
@@ -59,7 +65,7 @@ function App() {
       <DiagonalGradientBackground colors={currentColors} />
 
       {/* WINDOW STRUCTURE */}
-      <div className={`w-screen h-screen flex flex-col overflow-hidden`}>
+      <div className={`w-screen h-screen flex flex-col relative overflow-hidden`}>
         <div className='flex-none'>
           <Headbar isUserIdle={isUserIdle} />
         </div>
@@ -74,6 +80,9 @@ function App() {
         </div>
       </div>
 
+      <div className={`w-screen h-screen absolute inset-0 flex flex-col items-center justify-center ${showModal ? 'backdrop-blur-md bg-black/25' : 'pointer-events-none'}`}>
+        {showModal ? <Modal /> : null}
+      </div>
 
       {/* DEBUG ONLY */}
       <DataManagement />
