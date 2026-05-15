@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useLiveQuery } from 'dexie-react-hooks';
 import { db } from './db';
 import { useUserActivity } from "./hooks/useUserActivity";
+import { useTransition } from "./hooks/useTransitions";
 
 // COMPONENTS
 import DataManagement from './components/DataManagement';
@@ -16,6 +17,7 @@ import Home from './features/Home';
 function App() {
   // MODALS PARAMETERS
   const [showModal, setShowModal] = useState(false);
+  const { shouldRender, isAnimating } = useTransition(showModal, 500);
 
   // USER IDLE PARAMETERS
   const [idleCounter, setIdleCounter] = useState(0);
@@ -80,8 +82,12 @@ function App() {
         </div>
       </div>
 
-      <div onClick={() => {setShowModal(false)}} className={`w-screen h-screen absolute inset-0 flex flex-col items-center justify-center ${showModal ? 'backdrop-blur-md bg-black/25' : 'pointer-events-none'} transition-all ease-in-out duration-350`}>
-        {showModal ? <Modal show={showModal} title={"Settings"}/> : null}
+      <div 
+        onClick={() => {setShowModal(false)}} 
+        style={{ transitionDelay: isAnimating ? "0ms" : "250ms" }}
+        className={`w-screen h-screen absolute inset-0 flex flex-col items-center justify-center transition-all duration-300 ${isAnimating ? 'opacity-100 backdrop-blur-md' : 'opacity-0 pointer-events-none'}`}
+      >
+        {shouldRender ? <Modal isAnimating={isAnimating} title={"Settings"} enterDelay="100ms" exitDelay="0ms"/> : null}
       </div>
 
       {/* DEBUG ONLY */}
