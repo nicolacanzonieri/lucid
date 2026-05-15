@@ -25,7 +25,7 @@ function Headbar({ isUserIdle=false, onClickSettings }: HeadbarProps) {
     const time = currentTime.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false });
 
     return (
-        <div className={`w-full h-17 flex flex-row items-center justify-between p-3`}>
+        <div className={`w-full h-17 flex flex-row items-center justify-between p-p-2`}>
             {/* TIME */}
             <div className={`h-full flex flex-col items-start`}>
                 <span className={`font-elms text-neutral-300 text-md font-bold select-none`}>

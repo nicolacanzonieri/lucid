@@ -32,6 +32,15 @@
     --color-btn-active-bg-1: var(--color-btn-active-bg-1);
     --color-btn-active-border-1: var(--color-btn-active-border-1);
     --color-btn-active-text-1: var(--color-btn-active-text-1);
+
+    --color-modal-bg-1: var(--color-modal-bg-1);
+    --color-modal-border-1: var(--color-modal-border-1);
+    --color-modal-text-1: var(--color-modal-text-1);
+
+    /* SIZES */
+    --spacing-p-1: var(--size-p-1);
+    --spacing-p-2: var(--size-p-2);
+    --spacing-p-3: var(--size-p-3);
 }
 
 :root {
@@ -45,6 +54,15 @@
     --color-btn-active-bg-1: rgba(255, 255, 255, 0.10);
     --color-btn-active-border-1: rgba(255, 255, 255, 0.10);
     --color-btn-active-text-1: rgba(85, 85, 85, 1);
+
+    --color-modal-bg-1: rgba(255, 255, 255, 0.15);
+    --color-modal-border-1: rgba(255, 255, 255, 0.15);
+    --color-modal-text-1: rgba(200, 200, 200, 1);
+
+    /* SIZES */
+    --size-p-1: 16px;
+    --size-p-2: 12px;
+    --size-p-3: 8px;
 }
 
 html {
