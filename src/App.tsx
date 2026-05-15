@@ -39,28 +39,29 @@ function App() {
       }
     };
 
-    initDb();
-
+    // Increment idle counter
     const timer = setInterval(() => {
       setIdleCounter((prev) => prev + 1);
     }, 1000);
+    
+    initDb();
 
     return () => clearInterval(timer);
   }, []);
-
-  const currentColors = settingsData?.colors ?? ['#333', '#000'];
-
-  // IDLE MONITOR
-  useUserActivity(() => {
-    setIdleCounter(0);
-    setIsUserIdle(false);
-  }, 1000);
 
   useEffect(() => {
     if (idleCounter >= 5 && !isUserIdle) {
       setIsUserIdle(true);
     }
   }, [idleCounter, isUserIdle]);
+
+  useUserActivity(() => {
+    // Reset idle counter if user is not idle
+    setIdleCounter(0);
+    setIsUserIdle(false);
+  }, 1000);
+
+  const currentColors = settingsData?.colors ?? ['#333', '#000'];
 
   return (
     <>
