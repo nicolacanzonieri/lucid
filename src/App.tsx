@@ -70,7 +70,7 @@ function App() {
       {/* WINDOW STRUCTURE */}
       <div className={`w-screen h-screen flex flex-col relative overflow-hidden`}>
         <div className='flex-none'>
-          <Headbar isUserIdle={isUserIdle} onClickSettings={() => {setShowModal(true)}} />
+          <Headbar isUserIdle={showModal ? false : isUserIdle} onClickSettings={() => {setShowModal(true)}} />
         </div>
 
         {/* MAIN VIEW */}
@@ -79,16 +79,16 @@ function App() {
         </div>
 
         <div className='flex-none'>
-          <Bottombar isUserIdle={isUserIdle} />
+          <Bottombar isUserIdle={showModal ? false : isUserIdle} />
         </div>
       </div>
 
       <div 
         onClick={() => {setShowModal(false)}} 
         style={{ transitionDelay: isAnimating ? "0ms" : "250ms" }}
-        className={`w-screen h-screen absolute inset-0 flex flex-col items-center justify-center transition-all duration-300 ${isAnimating ? 'opacity-100 backdrop-blur-md' : 'opacity-0 pointer-events-none'}`}
+        className={`w-screen h-screen absolute inset-0 flex flex-col items-center justify-center transition-all ease-in-out duration-500 ${isAnimating ? 'opacity-100 backdrop-blur-2xl' : 'opacity-0 backdrop-blur-none pointer-events-none'}`}
       >
-        {shouldRender ? <Modal isAnimating={isAnimating} title={"Settings"} enterDelay="100ms" exitDelay="0ms"/> : null}
+        {shouldRender ? <Modal isAnimating={isAnimating} title={"Settings"} enterDelay="250ms" exitDelay="0ms"/> : null}
       </div>
 
       {/* DEBUG ONLY */}
